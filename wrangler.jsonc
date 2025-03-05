@@ -32,10 +32,10 @@
 	 */
 	"vars": {
 		"NODE_VERSION": "22.14.0",
-		"NODE_ENV": "development",
-		"SOUNDCLOUD_CLIENT_SECRET": "placeholder",
-		"PUBLIC_SC_CLIENT_ID": "placeholder",
-		"PUBLIC_SC_REDIRECT_URI": "placeholder"
+		"NODE_ENV": "production",
+		"PUBLIC_SC_CLIENT_ID": "ttmRWSTGJ7pzm1s8znU3CSJ5mXSjtS0l",
+		"PUBLIC_SC_REDIRECT_URI": "https://raincloud.fm/oauth",
+		"SOUNDCLOUD_CLIENT_SECRET": ""
 	}
 	/**
 	 * Note: Use secrets to store sensitive data.
