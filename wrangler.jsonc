@@ -30,7 +30,13 @@
 	 * Environment Variables
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 	 */
-	"vars": { "NODE_VERSION": "22.14.0", "NODE_ENV": "development", "SOUNDCLOUD_CLIENT_SECRET": "" }
+	"vars": {
+		"NODE_VERSION": "22.14.0",
+		"NODE_ENV": "development",
+		"SOUNDCLOUD_CLIENT_SECRET": "",
+		"PUBLIC_SC_CLIENT_ID": "",
+		"PUBLIC_SC_REDIRECT_URI": ""
+	}
 	/**
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
