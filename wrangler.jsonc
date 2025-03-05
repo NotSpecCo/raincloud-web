@@ -4,11 +4,14 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "raincloud",
-	"compatibility_date": "2025-02-24",
+	"name": "raincloud-web",
+	"compatibility_date": "2025-03-02",
 	"pages_build_output_dir": ".svelte-kit/cloudflare",
 	"observability": {
 		"enabled": true
+	},
+	"dev": {
+		"port": 3000
 	},
 	/**
 	 * Smart Placement
@@ -27,10 +30,17 @@
 	 * Environment Variables
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 	 */
-	"vars": { "NODE_VERSION": "22.14.0" }
+	"vars": {
+		"NODE_VERSION": "22.14.0",
+		"NODE_ENV": "development",
+		"PUBLIC_SC_CLIENT_ID": "ttmRWSTGJ7pzm1s8znU3CSJ5mXSjtS0l",
+		"PUBLIC_SC_REDIRECT_URI": "https://raincloud.fm/oauth"
+	}
 	/**
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
+	 *
+	 * - SOUNDCLOUD_CLIENT_SECRET
 	 */
 
 	/**

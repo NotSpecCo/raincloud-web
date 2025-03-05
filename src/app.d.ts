@@ -9,7 +9,8 @@ declare global {
 		// interface Platform {}
 		interface Platform {
 			env: {
-				COUNTER: DurableObjectNamespace;
+				SOUNDCLOUD_CLIENT_ID: string;
+				SOUNDCLOUD_CLIENT_SECRET: string;
 			};
 			context: {
 				waitUntil(promise: Promise<unknown>): void;
