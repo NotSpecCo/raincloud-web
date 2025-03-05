@@ -49,3 +49,6 @@ export const tokensSchema = z.object({
 });
 
 export type Tokens = z.infer<typeof tokensSchema>;
+
+export const postLoginActionSchema = z.enum(['qr_code']);
+export type PostLoginAction = z.infer<typeof postLoginActionSchema>;

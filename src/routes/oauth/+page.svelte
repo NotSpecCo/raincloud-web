@@ -17,10 +17,11 @@
 
 		const tokens = await getTokens(code, codeVerifier);
 		console.log('tokens', tokens);
+		const postLoginAction = Storage.get('post_login_action');
 		Storage.clear();
 		Storage.set('tokens', tokens);
 
-		goto('/');
+		goto(postLoginAction === 'qr_code' ? '/qr' : '/');
 	});
 
 	async function getTokens(code: string, codeVerifier: string): Promise<Tokens> {

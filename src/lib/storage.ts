@@ -1,16 +1,18 @@
+import type { PostLoginAction, Tokens } from './schemas';
+
 export class Storage {
-	static set(key: StorageKey, value: string | number | object) {
+	static set<K extends StorageKey>(key: K, value: StorageValue[K]) {
 		const stringValue = typeof value === 'object' ? JSON.stringify(value) : value.toString();
 		sessionStorage.setItem(key, stringValue);
 	}
 
-	static get<T = string>(key: StorageKey): T | null {
+	static get<K extends StorageKey>(key: K): StorageValue[K] | null {
 		const value = sessionStorage.getItem(key);
 		if (!value) return null;
 		try {
-			return JSON.parse(value) as T;
+			return JSON.parse(value) as StorageValue[K];
 		} catch {
-			return value as unknown as T;
+			return value as unknown as StorageValue[K];
 		}
 	}
 
@@ -23,4 +25,9 @@ export class Storage {
 	}
 }
 
-export type StorageKey = 'tokens' | 'code_verifier';
+export type StorageKey = 'tokens' | 'code_verifier' | 'post_login_action';
+export type StorageValue = {
+	tokens: Tokens;
+	code_verifier: string;
+	post_login_action: PostLoginAction;
+};

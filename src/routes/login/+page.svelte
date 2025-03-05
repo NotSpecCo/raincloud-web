@@ -5,8 +5,6 @@
 	import { calculatePKCECodeChallenge, randomPKCECodeVerifier, randomState } from 'openid-client';
 	import { onMount } from 'svelte';
 
-	let loginState: 'logged_in' | 'logging_in' | 'logged_out' = 'logged_out';
-
 	onMount(() => {
 		login();
 	});
